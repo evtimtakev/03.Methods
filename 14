@@ -1,0 +1,73 @@
+// Modify your last program and try to make it work for any number type, 
+//not just integer (e.g. decimal, float, byte, etc.). 
+//Use generic method (read in Internet about generic methods in C#).
+
+using System;
+using System.Collections.Generic;
+
+
+class AllValueTypes
+{
+    static T FindMin<T>(params T[] arr)
+    {
+        dynamic min = int.MaxValue;
+        for (int i = 0; i < arr.Length; i++)
+        {
+
+            if (arr[i] < min)
+            {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+    static T FindMax<T>(params T[] arra)
+    {
+        dynamic max = 0;
+        for (int i = 0; i < arra.Length; i++)
+        {
+            if (arra[i] > max)
+            {
+                max = arra[i];
+            }
+        }
+        return max;
+    }
+
+    static T FindeSum<T>(params T[] arrey)
+    {
+        dynamic sum = 0;
+        for (int i = 0; i < arrey.Length; i++)
+        {
+            sum += arrey[i];
+        }
+
+        return sum;
+    }
+
+    static T FindAvrige<T>(params T[] arrays)
+    {
+        dynamic sum = FindeSum(arrays);
+        int lenght = arrays.Length;
+        sum = sum / lenght;
+
+        return sum;
+    }
+    static T FindProduct<T>(params T[] arr)
+    {
+        dynamic product = 1;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            product *= arr[i];
+        }
+        return product;
+    }
+    static void Main(string[] args)
+    {
+        Console.WriteLine(FindMin(2, 3, 5, 6, 7));// min value
+        Console.WriteLine(FindMax(12, 34, 56, 875, 12, 334, 545, 456));//max value
+        Console.WriteLine(FindeSum(2, 45, 236));// sum
+        Console.WriteLine(FindAvrige(23, 456, 789, 45, 23, 123, 234, 543, 345));//avrige
+        Console.WriteLine(FindProduct(23, 2, 5));//product
+    }
+}
