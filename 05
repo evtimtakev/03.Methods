@@ -1,0 +1,46 @@
+//Write a method that checks if the element at given position in given 
+//array of integers is bigger than its two neighbors (when such exist).
+
+using System;
+
+
+
+
+class Neighbors
+{
+    static bool CheckTheNeighbors(int[] arr,int b)
+    {
+        bool isThrue = false;
+        for (int i = 1; i < arr.Length-1; i++)
+        {
+            if (arr[b]>arr[b+1] && arr[b]>arr[b-1])
+            {
+                isThrue = true;
+            }
+        }
+
+        return isThrue;
+
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("Enter the index");
+        int n = int.Parse(Console.ReadLine());
+
+        int[] array = new int[] { 2, 4, 2, 8, 5, 34,56 };
+
+        bool result = CheckTheNeighbors(array, n);
+
+        if (result)
+        {
+            Console.WriteLine("Yes the number with index  {0} is biger than its two neighbors",n);
+        }
+        else
+        {
+            Console.WriteLine("No");
+        }
+
+
+    }
+}
