@@ -1,0 +1,22 @@
+//Write a method that asks the user for his name and prints “Hello, 
+//<name>” (for example, “Hello, Peter!”). Write a program to test this method.
+
+using System;
+
+
+
+
+    class UserName
+    {
+        static void PrintYourName(string name)
+        {
+            Console.WriteLine("Hello {0}",name);
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("What is your name");
+            string getName = Console.ReadLine();
+            PrintYourName(getName);
+        }
+    }
+
