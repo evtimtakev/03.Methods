@@ -1,0 +1,74 @@
+//Write methods to calculate minimum, maximum, average, sum and
+//product of given set of integer numbers. Use variable number of arguments.
+
+
+using System;
+
+
+
+
+class MinMax
+{
+    static int FindMin(params int[] arr)
+    {
+        int min = int.MaxValue;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            
+            if (arr[i]<min)
+            {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+    static int FindMax(params int[] arra)
+    {
+        int max = 0;
+        for (int i = 0; i < arra.Length; i++)
+        {
+            if (arra[i]>max)
+            {
+                max = arra[i];
+            }
+        }
+        return max;
+    }
+
+    static int FindeSum(params int[] arrey)
+    {
+        int sum = 0;
+        for (int i = 0; i < arrey.Length; i++)
+        {
+            sum += arrey[i];
+        }
+
+        return sum;
+    }
+
+    static int FindAvrige(params int[] arrays)
+    {
+        int sum = FindeSum(arrays);
+        int lenght = arrays.Length;
+        sum = sum / lenght;
+
+        return sum;
+    }
+    static long FindProduct(params int[] arr)
+    {
+        long product = 1;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            product *= arr[i];
+        }
+        return product;
+    }
+    static void Main(string[] args)
+    {
+        Console.WriteLine(FindMin(2,3,5,6,7));// min value
+        Console.WriteLine(FindMax(12,34,56,875,12,334,545,456));//max value
+        Console.WriteLine(FindeSum(2,45,236));// sum
+        Console.WriteLine(FindAvrige(23,456,789,45,23,123,234,543,345));//avrige
+        Console.WriteLine(FindProduct(23,2,5));//product
+    }
+}
