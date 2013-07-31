@@ -1,0 +1,32 @@
+//Write a method that return the maximal element in a portion of array of integers starting at given index. 
+//Using it write another method that sorts an array in ascending / descending order.
+
+using System;
+
+class MaxElement
+{
+    static int BigestNumber(int[] arr, int number)
+    {
+        int max = 0;
+        for (int i = number; i < arr.Length; i++)
+        {
+            if (arr[i]>max)
+            {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+    static void Main()
+    {
+        Console.WriteLine("Enter index");
+        int index = int.Parse(Console.ReadLine());
+        int[] array = new int[] { 22, 4, 80, 12, 6, 1, 67, 8, 5, 19, 15, 8, 12 };
+        
+
+        int result = BigestNumber(array, index);
+
+        Console.WriteLine(result);
+
+    }
+}
